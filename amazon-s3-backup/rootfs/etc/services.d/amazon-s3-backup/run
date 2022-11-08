@@ -8,7 +8,6 @@ bashio::log.info "Starting S3 Backup..."
 
 custom_endpoint="$(bashio::config 'custom_endpoint')"
 bucket_name="$(bashio::config 'bucket_name')"
-storage_class="$(bashio::config 'storage_class' 'STANDARD')"
 bucket_region="$(bashio::config 'bucket_region' 'eu-central-1')"
 delete_local_backups="$(bashio::config 'delete_local_backups' 'true')"
 local_backups_to_keep="$(bashio::config 'local_backups_to_keep' '3')"
