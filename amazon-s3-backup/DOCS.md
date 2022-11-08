@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Amazon S3 Backup
+# Home Assistant Add-on: S3 Backup
 
 ## Installation
 
@@ -11,7 +11,7 @@ Follow these steps to get the add-on installed on your system:
 
 ## How to use
 
-1. Set the `aws_access_key`, `aws_secret_access_key`, and `bucket_name`. 
+1. Set the `aws_access_key`, `aws_secret_access_key`, and `bucket_name`.
 2. Optionally / if necessary, change `bucket_region`, `storage_class`, and `delete_local_backups` and `local_backups_to_keep` configuration options.
 3. Start the add-on to sync the `/backup/` directory to the configured `bucket_name` on Amazon S3. You can also automate this of course, see example below:
 
