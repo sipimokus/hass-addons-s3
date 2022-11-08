@@ -1,10 +1,10 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: Amazon S3 Backup
+# Home Assistant Community Add-on: S3 Backup
 # ==============================================================================
 #bashio::log.level "info"
 
-bashio::log.info "Starting Amazon S3 Backup..."
+bashio::log.info "Starting S3 Backup..."
 
 custom_endpoint="$(bashio::config 'custom_endpoint')"
 bucket_name="$(bashio::config 'bucket_name')"
@@ -37,4 +37,4 @@ else
     bashio::log.info "Will not delete any local backups since 'delete_local_backups' is set to 'false'"
 fi
 
-bashio::log.info "Finished Amazon S3 Backup."
+bashio::log.info "Finished S3 Backup."
