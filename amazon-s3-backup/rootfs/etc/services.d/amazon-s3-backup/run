@@ -29,7 +29,6 @@ aws s3 sync \
   s3://$bucket_name/ \
   --no-progress \
   --region $bucket_region \
-  --storage-class $storage_class
 
 if bashio::var.true "${delete_local_backups}"; then
     bashio::log.info "Will delete all the oldest local backups except the '${local_backups_to_keep}' newest ones."
