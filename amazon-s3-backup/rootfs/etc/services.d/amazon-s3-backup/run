@@ -6,6 +6,7 @@
 
 bashio::log.info "Starting Amazon S3 Backup..."
 
+custom_endpoint="$(bashio::config 'custom_endpoint')"
 bucket_name="$(bashio::config 'bucket_name')"
 storage_class="$(bashio::config 'storage_class' 'STANDARD')"
 bucket_region="$(bashio::config 'bucket_region' 'eu-central-1')"
@@ -14,6 +15,7 @@ local_backups_to_keep="$(bashio::config 'local_backups_to_keep' '3')"
 monitor_path="/backup"
 jq_filter=".backups|=sort_by(.date)|.backups|reverse|.[$local_backups_to_keep:]|.[].slug"
 
+export AWS_ENDPOINT="$(bashio::config 'custom_endpoint')"
 export AWS_ACCESS_KEY_ID="$(bashio::config 'aws_access_key')"
 export AWS_SECRET_ACCESS_KEY="$(bashio::config 'aws_secret_access_key')"
 export AWS_REGION="$bucket_region"
